@@ -1,0 +1,30 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+# Ignore dataset and generated images
+data/
+generated_signatures/
+*.png
+*.jpg
+*.jpeg
+samples/
+logs/
+data/raw/
+
+# Checkpoints (keep only final)
+checkpoints/G_epoch_*.pth
+checkpoints/D_epoch_*.pth
+
+# Flutter
+mobile_app/build/
+mobile_app/.dart_tool/
+mobile_app/.idea/
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+Thumbs.db
+.DS_Store
