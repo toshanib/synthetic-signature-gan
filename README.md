@@ -233,18 +233,18 @@ Android Mobile App Emulator:
 
 
 --- Evaluation Results ---
-FID Proxy Score      : 0.0001
-Diversity Score      : 5.7626
-Real Mean Pixel      : 0.9194
-Fake Mean Pixel      : 0.9106
+- FID Proxy Score      : 0.0001
+- Diversity Score      : 5.7626
+- Real Mean Pixel      : 0.9194
+- Fake Mean Pixel      : 0.9106
 
-Test samples: 24
+- Test samples: 24
 
 ===== Verification Evaluation Results =====
-Accuracy                : 0.9583
-False Acceptance Rate   : 0.0455
-False Rejection Rate    : 0.0000
-TP: 2, TN: 21, FP: 1, FN: 0
+- Accuracy                : 0.9583
+- False Acceptance Rate   : 0.0455
+- False Rejection Rate    : 0.0000
+- TP: 2, TN: 21, FP: 1, FN: 0
 
 ---
 
