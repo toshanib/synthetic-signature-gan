@@ -1,7 +1,7 @@
 # 🖊️ Synthetic Signature Generator using Vanilla GAN (Mobile + Docker Deployment)
 
 ## 📌 Project Overview
-This project implements a Vanilla Generative Adversarial Network (GAN) to generate realistic synthetic handwritten signatures and deploy them through a mobile application. The system is designed to augment limited signature datasets and support signature verification systems used in banking, academic institutions, and identity authentication workflows.
+This project implements a Vanilla Generative Adversarial Network (GAN) to generate realistic synthetic handwritten signatures(CEDAR DATASET) and deploy them through a mobile application. The system is designed to augment limited signature datasets and support signature verification systems used in banking, academic institutions, and identity authentication workflows.
 
 The project includes:
 - Vanilla GAN for signature generation
@@ -52,31 +52,6 @@ This follows a client-server microservice architecture used in real AI productio
 
 ---
 
-## 📂 Repository Structure
-GANProject2Signatures/
-│
-├── backend/
-│   └── main.py                 # FastAPI inference API
-│
-├── checkpoints/
-│   └── G_final.pth             # Final trained generator model
-│
-├── src/
-│   ├── generator_vanilla_gan.py
-│   ├── discriminator_vanilla_gan.py
-│   ├── train_vanilla_gan_signatures.py
-│   ├── evaluate_vanilla_gan_signatures.py
-│   ├── signature_verifier_train.py
-│   └── signature_verifier_eval.py
-│
-├── mobile_app/                 # Flutter application
-├── Dockerfile
-├── requirements.txt
-├── .gitignore
-└── README.md
-
----
-
 ## 🧬 GAN Model Architecture
 
 ### Generator (G)
@@ -100,7 +75,7 @@ GANProject2Signatures/
 ---
 
 ## 📊 Dataset Information
-- Dataset Type: Handwritten Signature Images
+- Dataset Type: Handwritten Signature Images from CEDAR DATASET
 - Users: 5 users (subset)
 - Samples: ~20 genuine signatures per user
 - Image Size: 64×64 grayscale
@@ -237,6 +212,39 @@ The backend is containerized to ensure:
 - Production-style AI deployment
 
 This follows modern MLOps and AI system design practices.
+
+---
+
+## Results
+Epoch 20 Generated Sample: 
+<img width="393" height="396" alt="image" src="https://github.com/user-attachments/assets/446b85db-41f4-41c3-bec0-eef23e8f5751" />
+
+Epoch 200 Generated Sample: 
+
+<img width="391" height="396" alt="image" src="https://github.com/user-attachments/assets/c73f2780-feca-4019-afac-875906b77041" />
+
+Swagger API/FastAPI Results: 
+
+<img width="1477" height="1352" alt="image" src="https://github.com/user-attachments/assets/69ef7f14-f606-45fb-af92-e942b2f4bca6" />
+
+Android Mobile App Emulator: 
+
+<img width="621" height="1402" alt="image" src="https://github.com/user-attachments/assets/a71e97d1-982d-44c6-b5d6-09ffd00df173" />
+
+
+--- Evaluation Results ---
+FID Proxy Score      : 0.0001
+Diversity Score      : 5.7626
+Real Mean Pixel      : 0.9194
+Fake Mean Pixel      : 0.9106
+
+Test samples: 24
+
+===== Verification Evaluation Results =====
+Accuracy                : 0.9583
+False Acceptance Rate   : 0.0455
+False Rejection Rate    : 0.0000
+TP: 2, TN: 21, FP: 1, FN: 0
 
 ---
 
