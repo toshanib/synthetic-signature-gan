@@ -1,6 +1,6 @@
-# 🖊️ Synthetic Signature Generator using Vanilla GAN (Mobile + Docker Deployment)
+# Synthetic Signature Generator using Vanilla GAN (Mobile + Docker Deployment)
 
-## 📌 Project Overview
+## Project Overview
 This project implements a Vanilla Generative Adversarial Network (GAN) to generate realistic synthetic handwritten signatures(CEDAR DATASET) and deploy them through a mobile application. The system is designed to augment limited signature datasets and support signature verification systems used in banking, academic institutions, and identity authentication workflows.
 
 The project includes:
@@ -8,51 +8,18 @@ The project includes:
 - Signature verification experiment
 - FastAPI backend (Dockerized)
 - Flutter mobile app frontend
-- End-to-end reproducible AI deployment pipeline
 
 ---
 
-## 🎯 Project Objectives
+## Project Objectives
 1. Learn the distribution of real handwritten signatures.
 2. Generate realistic synthetic signature images using a Vanilla GAN.
-3. Augment training data for signature verification systems.
-4. Evaluate verification performance (Accuracy, FAR, FRR).
-5. Deploy a mobile app connected to a GAN inference API.
+3. Evaluate verification performance (Accuracy, FAR, FRR).
+4. Deploy a mobile app connected to a GAN inference API.
 
 ---
 
-## 🧠 System Architecture
-
-### Pipeline
-Real Signature Dataset  
-        ↓  
-Data Preprocessing (Grayscale, Resize, Normalize)  
-        ↓  
-Vanilla GAN Training (Generator + Discriminator)  
-        ↓  
-Trained Generator (G_final.pth)  
-        ↓  
-FastAPI Backend (Inference API)  
-        ↓  
-Flutter Mobile App (Android Emulator / Device)  
-        ↓  
-Real-time Synthetic Signature Generation  
-
-### Deployment Architecture
-Flutter Mobile App (Client)  
-        ↓ HTTP Request  
-http://10.0.2.2:8000  
-        ↓  
-Docker Container (Backend)  
-- FastAPI (Uvicorn Server)  
-- PyTorch GAN Model  
-- /generate API Endpoint  
-
-This follows a client-server microservice architecture used in real AI production systems.
-
----
-
-## 🧬 GAN Model Architecture
+##  GAN Model Architecture
 
 ### Generator (G)
 - Input: 100-dimensional latent vector (z ~ N(0,1))
@@ -94,21 +61,6 @@ This follows a client-server microservice architecture used in real AI productio
 - Batch Size: 16
 - Latent Dimension: 100
 - Device: CPU (GPU optional)
-
----
-
-## 🧪 Verification Module (Core Experiment)
-A signature verification classifier is trained to distinguish:
-- Genuine signatures
-- Forged signatures
-
-Evaluation Metrics:
-- Accuracy
-- False Acceptance Rate (FAR)
-- False Rejection Rate (FRR)
-
-Purpose:
-To evaluate whether GAN-generated synthetic signatures improve verification robustness when real data is limited.
 
 ---
 
@@ -190,28 +142,6 @@ Generates N synthetic signature images using the trained GAN.
 
 GET /docs  
 Swagger API documentation for testing endpoints.
-
----
-
-## 📸 Features
-- Real-time synthetic signature generation
-- Dockerized AI backend (FastAPI + PyTorch)
-- Flutter mobile application UI
-- Adjustable number of generated signatures
-- GAN architecture information screen
-- Verification experiment integration
-- Reproducible deployment environment
-
----
-
-## 🐳 Why Docker is Used
-The backend is containerized to ensure:
-- Reproducibility across systems
-- Easy setup with one command
-- Consistent dependency management
-- Production-style AI deployment
-
-This follows modern MLOps and AI system design practices.
 
 ---
 
